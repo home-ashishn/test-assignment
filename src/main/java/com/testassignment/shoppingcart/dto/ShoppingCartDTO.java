@@ -1,7 +1,7 @@
 package com.testassignment.shoppingcart.dto;
 
 /**
- * Created by sahan on 4/10/2016.
+ * Created by ashishn on 08/28/2017.
  */
 public class ShoppingCartDTO {
     private Long productId;

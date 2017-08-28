@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * Created by sahan on 4/8/2016.
+ * Created by ashishn on 08/28/2017.
  */
 @Entity
 @Table(name = "shopping_cart")

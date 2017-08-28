@@ -1,4 +1,4 @@
-package com.sahan.zaizi;
+package com.testassignment.shoppingcart;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -11,7 +11,7 @@ import com.testassignment.shoppingcart.service.ProductService;
 import java.util.List;
 
 /**
- * Created by sahan on 4/9/2016.
+ * Created by ashishn on 08/28/2017.
  */
 @RestController
 @RequestMapping("/products")

@@ -1,14 +1,14 @@
 package com.testassignment.shoppingcart.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.testassignment.shoppingcart.domain.ShoppingCart;
 
-import java.util.List;
-
 /**
- * Created by sahan on 4/9/2016.
+ * Created by ashishn on 08/28/2017.
  */
-public interface ShoppingCartRepository extends JpaRepository<ShoppingCart, Long> {
+public interface ShoppingCartRepository extends MongoRepository<ShoppingCart, Long> {
     List<ShoppingCart> findByStatus(String status);
 }

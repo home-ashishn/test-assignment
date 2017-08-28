@@ -3,7 +3,7 @@ package com.testassignment.shoppingcart.dto;
 import java.util.List;
 
 /**
- * Created by sahan on 4/14/2016.
+ * Created by ashishn on 08/28/2017.
  */
 public class ShoppingCartIdDTO {
     private List<Long> ids;

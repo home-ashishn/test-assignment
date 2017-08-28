@@ -1,12 +1,12 @@
 package com.testassignment.shoppingcart.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.mongodb.repository.MongoRepository;
 
 import com.testassignment.shoppingcart.domain.Product;
 
 /**
- * Created by sahan on 4/8/2016.
+ * Created by ashishn on 08/28/2017.
  */
-public interface ProductRepository extends JpaRepository<Product, Long> {
+public interface ProductRepository extends MongoRepository<Product, Long> {
 
 }
