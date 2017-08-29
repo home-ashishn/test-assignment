@@ -1,13 +1,17 @@
 package com.testassignment.shoppingcart.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.testassignment.shoppingcart.domain.ShoppingCart;
 import com.testassignment.shoppingcart.dto.ShoppingCartDTO;
 import com.testassignment.shoppingcart.service.ShoppingCartService;
-
-import java.util.List;
 
 /**
  * Created by ashishn on 08/28/2017.
@@ -31,12 +35,12 @@ public class ShoppingCartController {
     }
 
     @RequestMapping(method = RequestMethod.PUT, produces = "application/json", consumes = "application/json", value ="/{id}")
-    public ShoppingCart updateProductItem(@RequestBody ShoppingCartDTO shoppingCartDTO, @PathVariable("id") Long ids) {
+    public ShoppingCart updateProductItem(@RequestBody ShoppingCartDTO shoppingCartDTO, @PathVariable("id") String ids) {
         return shoppingCartService.updateProduct(shoppingCartDTO, ids);
     }
 
     @RequestMapping(method = RequestMethod.DELETE, value ="/{id}")
-    public void deleteProductItem(@PathVariable("id") Long ids) {
+    public void deleteProductItem(@PathVariable("id") String ids) {
         shoppingCartService.deleteProduct(ids);
     }
 
@@ -46,7 +50,7 @@ public class ShoppingCartController {
     }
 
     @RequestMapping(method = RequestMethod.POST, value = "/purchase/{id}")
-    public void purchaseProducts(@PathVariable("id") Long id) {
+    public void purchaseProducts(@PathVariable("id") String id) {
         shoppingCartService.purchaseProducts(id);
     }
 }

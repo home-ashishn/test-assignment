@@ -7,6 +7,6 @@ import com.testassignment.shoppingcart.domain.Product;
 /**
  * Created by ashishn on 08/28/2017.
  */
-public interface ProductRepository extends MongoRepository<Product, Long> {
+public interface ProductRepository extends MongoRepository<Product, String> {
 
 }

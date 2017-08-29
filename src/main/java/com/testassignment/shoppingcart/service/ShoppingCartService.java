@@ -1,5 +1,8 @@
 package com.testassignment.shoppingcart.service;
 
+import java.util.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -10,9 +13,6 @@ import com.testassignment.shoppingcart.dto.ShoppingCartDTO;
 import com.testassignment.shoppingcart.repository.ProductRepository;
 import com.testassignment.shoppingcart.repository.ShoppingCartRepository;
 import com.testassignment.shoppingcart.repository.UserRepository;
-
-import java.util.Date;
-import java.util.List;
 
 /**
  * Created by ashishn on 08/28/2017.
@@ -34,7 +34,7 @@ public class ShoppingCartService {
         ShoppingCart shoppingCart = new ShoppingCart();
         Product product = productRepository.findOne(shoppingCartDTO.getProductId());
         shoppingCart.setProduct(product);
-        shoppingCart.setUser(userRepository.findOne(1L));
+        shoppingCart.setUser(userRepository.findByName("user1"));
         shoppingCart.setStatus(shoppingCartDTO.getStatus());
         shoppingCart.setDate(new Date());
         shoppingCart.setStock(shoppingCartDTO.getStock());
@@ -49,14 +49,14 @@ public class ShoppingCartService {
         return shoppingCartRepository.findByStatus("NOT_PURCHASED");
     }
 
-    public ShoppingCart updateProduct(ShoppingCartDTO shoppingCartDTO, Long id) {
+    public ShoppingCart updateProduct(ShoppingCartDTO shoppingCartDTO, String id) {
         ShoppingCart updateItem = shoppingCartRepository.findOne(id);
         updateItem.setStock(shoppingCartDTO.getStock());
         updateItem.setAmount(updateItem.getProduct().getUnitPrice() * shoppingCartDTO.getStock());
         return shoppingCartRepository.save(updateItem);
     }
 
-    public void deleteProduct(Long id) {
+    public void deleteProduct(String id) {
         shoppingCartRepository.delete(id);
     }
 
@@ -70,7 +70,7 @@ public class ShoppingCartService {
     }
 
 
-    public void purchaseProducts(Long id) {
+    public void purchaseProducts(String id) {
         ShoppingCart shoppingCart = shoppingCartRepository.findOne(id);
         shoppingCart.setStatus("PURCHASED");
         shoppingCartRepository.save(shoppingCart);

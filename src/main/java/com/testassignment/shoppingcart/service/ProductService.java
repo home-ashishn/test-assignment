@@ -1,14 +1,14 @@
 package com.testassignment.shoppingcart.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.testassignment.shoppingcart.domain.Product;
 import com.testassignment.shoppingcart.repository.ProductRepository;
-
-import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ashishn on 08/28/2017.

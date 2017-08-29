@@ -6,13 +6,13 @@ import java.util.List;
  * Created by ashishn on 08/28/2017.
  */
 public class ShoppingCartIdDTO {
-    private List<Long> ids;
+    private List<String> ids;
 
-    public List<Long> getIds() {
+    public List<String> getIds() {
         return ids;
     }
 
-    public void setIds(List<Long> ids) {
+    public void setIds(List<String> ids) {
         this.ids = ids;
     }
 }

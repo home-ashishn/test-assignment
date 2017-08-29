@@ -9,6 +9,6 @@ import com.testassignment.shoppingcart.domain.ShoppingCart;
 /**
  * Created by ashishn on 08/28/2017.
  */
-public interface ShoppingCartRepository extends MongoRepository<ShoppingCart, Long> {
+public interface ShoppingCartRepository extends MongoRepository<ShoppingCart, String> {
     List<ShoppingCart> findByStatus(String status);
 }

@@ -4,15 +4,15 @@ package com.testassignment.shoppingcart.dto;
  * Created by ashishn on 08/28/2017.
  */
 public class ShoppingCartDTO {
-    private Long productId;
+    private String productId;
     private Integer stock;
     private String status;
 
-    public Long getProductId() {
+    public String getProductId() {
         return productId;
     }
 
-    public void setProductId(Long productId) {
+    public void setProductId(String productId) {
         this.productId = productId;
     }
 

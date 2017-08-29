@@ -1,25 +1,23 @@
 package com.testassignment.shoppingcart.domain;
 
-import javax.persistence.*;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.DBRef;
+
 /**
  * Created by ashishn on 08/28/2017.
  */
-@Entity
-@Table(name = "user")
 public class User implements Serializable{
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private Long id;
+    private String id;
 
     private String name;
     private String email;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
+	@DBRef
     private Set<ShoppingCart> shoppingCarts = new HashSet<>();
 
     public User(String email, String name) {
@@ -30,11 +28,11 @@ public class User implements Serializable{
     public User(){
     }
 
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 

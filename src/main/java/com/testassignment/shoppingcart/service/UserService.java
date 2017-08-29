@@ -1,14 +1,14 @@
 package com.testassignment.shoppingcart.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.testassignment.shoppingcart.domain.User;
 import com.testassignment.shoppingcart.repository.UserRepository;
-
-import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by ashishn on 08/28/2017.
@@ -16,7 +16,8 @@ import java.util.List;
 @Service
 @Transactional
 public class UserService {
-    @Autowired
+   
+	@Autowired
     private UserRepository userRepository;
 
     private static List<User> users = new ArrayList<>();
